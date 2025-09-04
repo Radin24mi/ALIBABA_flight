@@ -82,7 +82,7 @@ for flight in flights:
 
 
 
-#        system, plain_code, origin, dest, price, fly_number , seat_left = flight.find_elements(By.CSS_SELECTOR, "gap-2").text.split("\n")
+        system, plain_code, origin, dest, price, fly_number , seat_left = flight.find_elements(By.CSS_SELECTOR, "gap-2").text.split("\n")
         data["system"] = system
         data["plain_code"] = plain_code
         data["origin"] = origin
@@ -102,5 +102,9 @@ time.sleep(5)
 
 driver.close()
 
+#وارد کردن اطلاعات به اکسل (ناموفق)
+
+
 df = pd.DataFrame(fly_list)
+
 df.to_csv("flight3.csv", index = False , encoding = "utf-8-sig")
